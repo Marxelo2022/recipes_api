@@ -115,15 +115,12 @@ const getMyRecipes = async(userId) => {
 }
 
 
-getMyRecipes('960015ec-53a8-4061-a20a-5167100247f9')
-    .then(data => console.log(data))
-    .catch(data => console.log(data))
-
 module.exports = {
     getAllRecipes,
     getRecipeById,
     createRecipe,
     updateRecipe,
-    deleteRecipe
+    deleteRecipe,
+    getMyRecipes
 }
 
