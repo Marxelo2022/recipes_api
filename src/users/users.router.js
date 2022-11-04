@@ -50,10 +50,14 @@ router.route('/:id')
         userServices.deleteUser
     )
 
-router.route('/:id/myRecipes')
-    .get(passport.authenticate('jwt', {session: false}),
-        recipeServices.getMyRecipes)
+//? el que hize yo 
 
+// router.route('/:id/myRecipes')
+//     .get(passport.authenticate('jwt', {session: false}),
+//         recipeServices.getMyRecipes)
 
+router.get('/me/my_recipes', 
+    passport.authenticate('jwt', {session: false}),
+    recipeServices.getMyRecipes)
 
 module.exports = router

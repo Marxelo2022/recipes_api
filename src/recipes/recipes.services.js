@@ -87,7 +87,8 @@ const deleteRecipe = (req, res) => {
 }
 
 const getMyRecipes = (req, res) => {
-    const userId = req.params.id
+    // const userId = req.params.id
+    const userId = req.user.id
     recipeControllers.getMyRecipes(userId)
         .then(data => {
             res.status(200).json(data)
